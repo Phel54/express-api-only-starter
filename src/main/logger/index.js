@@ -36,6 +36,16 @@ const logConfiguration = {
         }),
         new winston.transports.File({
             level: 'debug',
+            //Create a format
+            format: winston.format.combine(
+                winston.format.label({
+                    label: `👾`
+                }),
+                winston.format.timestamp({
+                   format: 'MMM-DD-YYYY HH:mm:ss'
+               }),
+                winston.format.printf(debug => `${debug.level}: ${debug.label}: ${[debug.timestamp]}: ${debug.message}`),
+            ),
             // Create the log directory if it does not exist
             filename: 'src/main/logger/index.log'
         })
