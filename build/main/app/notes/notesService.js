@@ -26,13 +26,14 @@ var createNotes = /*#__PURE__*/function () {
               title: title,
               description: description
             });
-            _context.next = 3;
+            logger.info();
+            _context.next = 4;
             return note.save();
 
-          case 3:
+          case 4:
             return _context.abrupt("return", _context.sent);
 
-          case 4:
+          case 5:
           case "end":
             return _context.stop();
         }

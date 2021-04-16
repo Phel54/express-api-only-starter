@@ -13,6 +13,8 @@ var _chalk = _interopRequireDefault(require("chalk"));
 
 var _keys = require("./keys");
 
+var _index = _interopRequireDefault(require("../logger/index"));
+
 require('dotenv').config(); //Import the mongoose module
 
 
@@ -36,6 +38,8 @@ var database = function database() {
   });
 
   _mongoose["default"].connection.on('connected', function () {
+    _index["default"].info('Mongoose default connection is open');
+
     console.log(connected('Mongoose default connection is open'));
   });
 
